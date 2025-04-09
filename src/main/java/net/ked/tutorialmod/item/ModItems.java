@@ -11,19 +11,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, KedMod.MOD_ID);
 
-    public static final RegistryObject<Item> KEDANDRYT = ITEMS.register("kedandryt",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> REFANDRYT = ITEMS.register("refandryt",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> DADOSZANDRYT = ITEMS.register("dadoszandryt",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> KAROANDRYT = ITEMS.register("karoandryt",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> CEDROANDRYT = ITEMS.register("cedroandryt",
+    public static final RegistryObject<Item> CEDROANDRITE = ITEMS.register("cedroandrite",
             () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

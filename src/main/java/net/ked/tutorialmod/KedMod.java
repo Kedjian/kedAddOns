@@ -1,6 +1,7 @@
 package net.ked.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.ked.tutorialmod.block.ModBlocks;
 import net.ked.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -33,6 +34,7 @@ public class KedMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -47,11 +49,10 @@ public class KedMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.KEDANDRYT);
-            event.accept(ModItems.DADOSZANDRYT);
-            event.accept(ModItems.REFANDRYT);
-            event.accept(ModItems.KAROANDRYT);
-            event.accept(ModItems.CEDROANDRYT);
+            event.accept(ModItems.CEDROANDRITE);
+        }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.CEDROANDRITE_BLOCK);
         }
     }
 
