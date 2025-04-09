@@ -50,6 +50,8 @@ public class KedMod {
             event.accept(ModItems.KEDANDRYT);
             event.accept(ModItems.DADOSZANDRYT);
             event.accept(ModItems.REFANDRYT);
+            event.accept(ModItems.KAROANDRYT);
+            event.accept(ModItems.CEDROANDRYT);
         }
     }
 

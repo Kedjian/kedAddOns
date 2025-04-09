@@ -20,6 +20,12 @@ public class ModItems {
     public static final RegistryObject<Item> DADOSZANDRYT = ITEMS.register("dadoszandryt",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> KAROANDRYT = ITEMS.register("karoandryt",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CEDROANDRYT = ITEMS.register("cedroandryt",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
