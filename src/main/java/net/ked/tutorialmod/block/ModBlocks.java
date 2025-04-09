@@ -21,6 +21,10 @@ public class ModBlocks {
     public static final RegistryObject<Block> CEDROANDRITE_BLOCK = registerBlock("cedroandrite_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+    public static final RegistryObject<Block> KEDOANDRITE_BLOCK = registerBlock("kedoandrite_block",
+            () -> new Block(BlockBehaviour.Properties.of().sound(SoundType.SWEET_BERRY_BUSH)
+                    .jumpFactor(5)
+                    .speedFactor(5)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
