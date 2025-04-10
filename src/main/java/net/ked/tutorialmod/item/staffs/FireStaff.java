@@ -45,23 +45,23 @@ public class FireStaff extends Item {
         if (!level.isClientSide) {
             Vec3 start = player.getEyePosition(1.0F);
             Vec3 look = player.getLookAngle();
-            Vec3 end = start.add(look.scale(30)); // 10 block range
+            Vec3 end = start.add(look.scale(30));
 
-            // Ray trace for entities
             EntityHitResult hitResult = ProjectileUtil.getEntityHitResult(
                     level, player, start, end, player.getBoundingBox().expandTowards(look.scale(10)).inflate(1.0),
                     e -> !e.isSpectator() && e.isPickable() && e != player
             );
 
-
-            BlockState blockState = Blocks.YELLOW_STAINED_GLASS_PANE.defaultBlockState(); // Or any block you want
+            BlockState blockState = Blocks.WATER.defaultBlockState();
+            BlockState blockState1 = Blocks.BLUE_WOOL.defaultBlockState();
             BlockParticleOption blockParticles = new BlockParticleOption(ParticleTypes.BLOCK, blockState);
+            BlockParticleOption blockParticles1 = new BlockParticleOption(ParticleTypes.BLOCK, blockState1);
 
-            // Spawn flame particles along the path
             for (int i = 0; i < 50; i++) {
                 double t = i / 50.0;
                 Vec3 point = start.add(look.scale(t * 50));
-                ((ServerLevel) level).sendParticles(blockParticles, point.x, point.y, point.z, 20, 0.2, 0.2, 0.2, 0.07);
+                ((ServerLevel) level).sendParticles(blockParticles, point.x, point.y, point.z, 3, 0.2, 0.2, 0.2, 0.07);
+                ((ServerLevel) level).sendParticles(blockParticles1, point.x, point.y, point.z, 6, 0.3, 0.3, 0.3, 0.2);
             }
 
             player.getCooldowns().addCooldown(this, 50);
