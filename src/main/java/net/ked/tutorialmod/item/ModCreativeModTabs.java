@@ -21,6 +21,8 @@ public class ModCreativeModTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.CEDROANDRITE_BLOCK.get());
                         output.accept(ModBlocks.KEDOANDRITE_BLOCK.get());
+                        output.accept(ModItems.CHISEL.get());
+                        output.accept(ModItems.FIRESTAFF.get());
                     }).build());
 
     public static void register(IEventBus eventBus) {
